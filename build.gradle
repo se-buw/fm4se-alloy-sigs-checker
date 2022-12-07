@@ -19,7 +19,7 @@ repositories {
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
-
+	implementation files('lib/org.alloytools.alloy.dist.jar')
 }
 
 application {
