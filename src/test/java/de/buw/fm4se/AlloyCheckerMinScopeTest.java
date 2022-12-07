@@ -2,7 +2,6 @@ package de.buw.fm4se;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.List;
 import java.util.Map;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -34,29 +33,40 @@ class AlloyCheckerMinScopeTest {
 	@Test
 	void checkDeadSigsDead1() {
 		String fileName = "src/main/resources/dead1.als";
-		List<String> dead = AlloyChecker.findDeadSignatures(fileName, opt, rep);
-		assertEquals(1, dead.size());
+		Map<String, Integer> minScope = AlloyChecker.findMinScope(fileName, opt, rep);
+		assertEquals(0, minScope.get("this/Node"));
+		assertEquals(0, minScope.get("this/List"));
 	}
 
 	@Test
 	void checkDeadSigsDead2() {
 		String fileName = "src/main/resources/dead2.als";
-		List<String> dead = AlloyChecker.findDeadSignatures(fileName, opt, rep);
-		assertEquals(2, dead.size());
+		Map<String, Integer> minScope = AlloyChecker.findMinScope(fileName, opt, rep);
+		assertEquals(0, minScope.get("this/Node"));
+		assertEquals(0, minScope.get("this/List"));
 	}
-	
+
 	@Test
 	void checkDeadSigsDreadbury() {
 		String fileName = "src/main/resources/dreadbury.als";
-		List<String> dead = AlloyChecker.findDeadSignatures(fileName, opt, rep);
-		assertEquals(0, dead.size());
+		Map<String, Integer> minScope = AlloyChecker.findMinScope(fileName, opt, rep);
+		assertEquals(0, minScope.get("this/Person"));
+		assertEquals(1, minScope.get("this/Agatha"));
+		assertEquals(1, minScope.get("this/Butler"));
+		assertEquals(1, minScope.get("this/Charles"));
 	}
 
 	@Test
 	void checkDeadSigsHouses() {
 		String fileName = "src/main/resources/houses.als";
-		List<String> dead = AlloyChecker.findDeadSignatures(fileName, opt, rep);
-		assertEquals(0, dead.size());
+		Map<String, Integer> minScope = AlloyChecker.findMinScope(fileName, opt, rep);
+		assertEquals(0, minScope.get("this/House"));
+		assertEquals(1, minScope.get("this/H1"));
+		assertEquals(1, minScope.get("this/H2"));
+		assertEquals(1, minScope.get("this/H3"));
+		assertEquals(1, minScope.get("this/Math"));
+		assertEquals(1, minScope.get("this/White"));
+
 	}
 
 }
