@@ -6,7 +6,7 @@ Usually we use formal methods to analyze software designs by translating analysi
 
 ## Project Setup
 
-[📼 see the project setup video](https://www.youtube.com/watch?v=40MA55S3F8c&list=PLGyeoukah9NYNMJhcHXLjAGN294O2uXCB&index=6)
+[📼 see the project setup video](https://www.youtube.com/watch?v=xt-K4CnWQio&list=PLGyeoukah9NYNMJhcHXLjAGN294O2uXCB&index=18)
 
 1. Install OpenJDK/JDK 
 2. Clone the [repository](https://github.com/se-buw/fm4se-alloy-sigs-checker.git)
@@ -36,4 +36,4 @@ Implement a method `findMinScope` in class `AlloyChecker` to determine the minim
 * You may update the scope of a signature `sig` in a command `cmd` to integer `i` by using the returned `Command` of `cmd.change(sig, false, i)`.
 * Computing a maximal scope is a bit tricky and done for you in method `getMaxScope`.
 
-[📼 see the code walk-through and explanation of tasks 1-3](https://www.youtube.com/watch?v=qa08IzWqSQs&list=PLGyeoukah9NYNMJhcHXLjAGN294O2uXCB&index=7)
+[📼 see the code walk-through and explanation of tasks 1-3](https://www.youtube.com/watch?v=INf1vaRb_a4&list=PLGyeoukah9NYNMJhcHXLjAGN294O2uXCB&index=19)
