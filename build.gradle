@@ -19,6 +19,7 @@ repositories {
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    testImplementation 'org.junit.platform:junit-platform-launcher:1.9.3'
 	implementation files('lib/org.alloytools.alloy.dist.jar')
 }
 
@@ -31,7 +32,24 @@ run {
     standardInput = System.in
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+test {
+    testLogging {
+        events "failed"
+        showStandardStreams = true
+        exceptionFormat "full"
+        showCauses false
+        showExceptions true
+        showStackTraces false
+        showStandardStreams = false
+    }
+    reports.html.required = true 
 }

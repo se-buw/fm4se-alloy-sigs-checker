@@ -1,4 +1,4 @@
-package de.buw.fm4se;
+package de.buw.fm4se.alloySig;
 
 import java.util.List;
 import java.util.Map;

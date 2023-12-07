@@ -1,4 +1,4 @@
-package de.buw.fm4se;
+package de.buw.fm4se.alloySig;
 
 import edu.mit.csail.sdg.alloy4.A4Reporter;
 import edu.mit.csail.sdg.alloy4.Err;

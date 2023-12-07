@@ -13,7 +13,7 @@
  * OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package de.buw.fm4se;
+package de.buw.fm4se.alloySig;
 
 import static edu.mit.csail.sdg.alloy4.A4Reporter.NOP;
 import static edu.mit.csail.sdg.ast.Sig.UNIV;
