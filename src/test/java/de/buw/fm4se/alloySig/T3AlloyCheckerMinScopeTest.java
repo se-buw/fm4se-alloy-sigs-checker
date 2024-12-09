@@ -6,13 +6,17 @@ import java.util.Map;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import de.buw.fm4se.alloySig.AlloyChecker;
 import edu.mit.csail.sdg.alloy4.A4Reporter;
 import edu.mit.csail.sdg.translator.A4Options;
 import edu.mit.csail.sdg.translator.A4Options.SatSolver;
 
-class AlloyCheckerMinScopeTest {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+class T3AlloyCheckerMinScopeTest {
 	private static A4Reporter rep;
 	private static A4Options opt;
 
@@ -24,6 +28,7 @@ class AlloyCheckerMinScopeTest {
 	}
 
 	@Test
+	@Order(1)
 	void checkMinScopesForList() {
 		String fileName = "src/main/resources/list.als";
 		Map<String, Integer> minScope = AlloyChecker.findMinScope(fileName, opt, rep);
@@ -34,6 +39,7 @@ class AlloyCheckerMinScopeTest {
 	}
 
 	@Test
+	@Order(2)
 	void checkMinScopesForDead1() {
 		String fileName = "src/main/resources/dead1.als";
 		Map<String, Integer> minScope = AlloyChecker.findMinScope(fileName, opt, rep);
@@ -44,6 +50,7 @@ class AlloyCheckerMinScopeTest {
 	}
 
 	@Test
+	@Order(3)
 	void checkMinScopesForDead2() {
 		String fileName = "src/main/resources/dead2.als";
 		Map<String, Integer> minScope = AlloyChecker.findMinScope(fileName, opt, rep);
@@ -54,6 +61,7 @@ class AlloyCheckerMinScopeTest {
 	}
 
 	@Test
+	@Order(4)
 	void checkMinScopesForDreadburyPuzzle() {
 		String fileName = "src/main/resources/dreadbury.als";
 		Map<String, Integer> minScope = AlloyChecker.findMinScope(fileName, opt, rep);
@@ -68,6 +76,7 @@ class AlloyCheckerMinScopeTest {
 	}
 
 	@Test
+	@Order(5)
 	void checkMinScopesForHousesPuzzle() {
 		String fileName = "src/main/resources/houses.als";
 		Map<String, Integer> minScope = AlloyChecker.findMinScope(fileName, opt, rep);
